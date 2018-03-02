@@ -11,11 +11,15 @@ AWS의 EC2 배포를 연습하는 프로젝트입니다.
 ```
 pip install -r requirements.txt
 ```
+
 ## Secrets
+
 ```
 .secrets/base.json
 ```
-```jason
+
+##jason
+```
 {
   "SECRET_KEY": "<Django settings SECRET_KEY value>"
 }
