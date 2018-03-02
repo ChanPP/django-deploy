@@ -12,26 +12,33 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import json
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# ec2-deploy/app
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# ec2-deploy
 ROOT_DIR = os.path.dirname(BASE_DIR)
 
+# ec2-deploy/.secrets
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
+# ec2-deploy/.secrets/base.json
 SECRETS_BASE = os.path.join(SECRETS_DIR, 'base.json')
 
+# base.json파일을 읽어온 결과
 f = open(SECRETS_BASE, 'rt')
 base_text = f.read()
 f.close()
 
+# 위 결과(JSON형식의 문자열)를 파이썬 객체로 변환
 secrets_base = json.loads(base_text)
-# secrets_base = json.loads(open(SECRETS_BASE, 'rt').read())
 
-SECRET_KEY = secrets_base['SECRET_KEY']
+# 위의 두 단계를 한 줄로 축약
+secrets_base = json.loads(open(SECRETS_BASE, 'rt').read())
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = secrets_base['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
