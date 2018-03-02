@@ -18,7 +18,7 @@ pip install -r requirements.txt
 .secrets/base.json
 ```
 
-##jason
+## Jason
 ```
 {
   "SECRET_KEY": "<Django settings SECRET_KEY value>"
