@@ -18,9 +18,31 @@ pip install -r requirements.txt
 .secrets/base.json
 ```
 
+
+
 ## Jason
 ```
 {
   "SECRET_KEY": "<Django settings SECRET_KEY value>"
 }
+```
+
+**`.PostgreSQL(AWS RDS)을 사용한다
+
+##json
+
+```
+{
+  "DATABASES": {
+    "default": {
+      "ENGINE": "django.db.backends.postgresql",
+      "NAME": "<DB name>",
+      "HOST": "",
+      "USER": "chan",
+      "PASSWORD": "qkrcks123#",
+      "PORT": 5432
+    }
+  }
+}
+
 ```
