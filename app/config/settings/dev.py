@@ -1,7 +1,9 @@
 from .base import *
 
-secrets = json.loads(open(SECRETS_DEV, 'rt').read())
+secrets = json.loads(open(SECRETS_PRODUCTION, 'rt').read())
 
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = [
+    '.amazonaws.com',
+]
 DATABASES = secrets['DATABASES']
